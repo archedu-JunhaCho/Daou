@@ -12,7 +12,9 @@ public class Response implements Serializable {
 	public void put(String key, String value) {
 		this.response.put(key, value);
 	}
-
+	public String get(String key) {
+		return this.response.get(key);
+	}
 	@Override
 	public String toString() {
 		return "\n[\n" + response + "\n]";

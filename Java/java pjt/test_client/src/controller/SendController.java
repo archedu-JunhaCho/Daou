@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class SendHandler implements Runnable{
+public class SendController implements Runnable{
     // setting
     private final Socket socket;
     private final ObjectOutputStream clientOut;
@@ -15,7 +15,7 @@ public class SendHandler implements Runnable{
     Scanner scanner = new Scanner(System.in);
 
     // constructor
-    public SendHandler(Socket socket) throws Exception {
+    public SendController(Socket socket) throws Exception {
         this.socket = socket;
         this.clientOut = new ObjectOutputStream(socket.getOutputStream());
         this.request = new Request();

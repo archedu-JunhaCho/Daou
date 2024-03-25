@@ -1,13 +1,13 @@
 // Server - socket Thread
 
-import controller.ClientHandler;
+import controller.ClientController;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         /** setting **/
-        Boolean run = true;
+        boolean run = true;
         ServerSocket ss = new ServerSocket(7890);
         System.out.println("<Open Server>");
 
@@ -16,7 +16,7 @@ public class Main {
             // recv thread
             Socket socket = ss.accept();
             System.out.println("  client -> " + socket);
-            Thread clientThread = new Thread(new ClientHandler(socket));
+            Thread clientThread = new Thread(new ClientController(socket));
             clientThread.start();
         }
 
